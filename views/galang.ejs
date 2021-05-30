@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>IPB Bisa</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <div class="container">
+          <a class="navbar-brand ms-5 me-5" href="#">
+            <img src="/images/logo.png" alt="logo" width="60" />
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active ms-3 me-3" href="#">Riwayat</a>
+            <a class="nav-link active ms-3 me-3" href="#">Tentang</a>
+          </div>
+          <a href="/contoh" class="btn btn-warning ms-5 me-5">Galang dana</a>
+        </div>
+      </div>
+    </nav>
+    <div style="margin: 0 10rem">
+      <h1 class="text-center my-5">IPB Bisa</h1>
+      <div class="row justify-content-between">
+        <% item.forEach(e => { %>
+        <div class="card col-3">
+          <img
+            src="data:image/<%=e.gambar.contentType%>;base64,<%=e.gambar.data.toString('base64')%>"
+            class="card-img-top"
+            alt="gambar"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= e.question7 %></h5>
+            <p class="card-text"><%= e.question9 %></p>
+            <a href="#" class="btn btn-primary">Detail</a>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
