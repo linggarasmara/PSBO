@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 const Dana = require("./models/Dana");
 
@@ -33,8 +35,13 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.render("home");
+app.get("/", async (req, res) => {
+  try {
+    const data = await Dana.find({});
+    res.render("home", { data });
+  } catch (error) {
+    res.status(300).send("an error occured!", error);
+  }
 });
 app.get("/contoh", (req, res) => {
   Dana.find({}, (err, item) => {
@@ -101,6 +108,32 @@ app.get("/new", (req, res) => {
   res.render("new-campaign");
 });
 
+app.get("/show/:id", async (req, res) => {
+  const e = await Dana.findById(req.params.id);
+  res.render("show", { e });
+});
+
+app.get("/edit/:id", async (req, res) => {
+  const e = await Dana.findById(req.params.id);
+  res.render("edit", { e });
+});
+app.put("/edit/:id", upload.single("gambar"), async (req, res) => {
+  try {
+    const data = await Dana.findByIdAndUpdate(req.params.id, req.body);
+    await data.save();
+    res.redirect("/");
+  } catch (error) {
+    res.status(404).send("an error occured!", error);
+  }
+});
+app.delete("/delete/:id", async (req, res) => {
+  try {
+    await Dana.findByIdAndDelete(req.params.id);
+    res.redirect("/");
+  } catch (error) {
+    res.status(404).send("an error occured!", error);
+  }
+});
 app.listen(3000, () => {
   console.log("listening on port 3000");
 });
