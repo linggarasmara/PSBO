@@ -5,6 +5,10 @@ const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
 const methodOverride = require("method-override");
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/User");
+
 app.use(methodOverride("_method"));
 
 const Dana = require("./models/Dana");
@@ -34,6 +38,12 @@ db.once("open", () => {
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.get("/", async (req, res) => {
   try {
@@ -43,16 +53,16 @@ app.get("/", async (req, res) => {
     res.status(300).send("an error occured!", error);
   }
 });
-app.get("/contoh", (req, res) => {
+app.get("/form", (req, res) => {
   Dana.find({}, (err, item) => {
     if (err) {
       res.status(500).send("an error occured!", err);
     } else {
-      res.render("contoh", { item: item });
+      res.render("form", { item: item });
     }
   });
 });
-app.post("/contoh", upload.single("gambar"), (req, res, next) => {
+app.post("/form", upload.single("gambar"), (req, res, next) => {
   const {
     question1,
     question2,
@@ -86,12 +96,17 @@ app.post("/contoh", upload.single("gambar"), (req, res, next) => {
     if (err) {
       console.log(err);
     } else {
-      res.redirect("/contoh");
+      res.redirect("/form");
     }
   });
 });
-app.get("/list", (req, res) => {
-  res.render("campaign");
+app.get("/list", async (req, res) => {
+  try {
+    const data = await Dana.find({});
+    res.render("campaign", { data });
+  } catch (error) {
+    res.status(404).send("an error occured!", error);
+  }
 });
 app.get("/campaign", async (req, res) => {
   try {
@@ -101,9 +116,32 @@ app.get("/campaign", async (req, res) => {
     res.status(300).send("an error occured!", error);
   }
 });
+
+// REGISTER
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+app.post("/register", async (req, res) => {
+  const { username, email, password } = req.body;
+  const user = new User({ username, email });
+  const newUser = await User.register(user, password);
+  res.send(newUser);
+});
+
+// LOGIN
 app.get("/login", (req, res) => {
   res.render("login");
 });
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    failureRedirect: "/login",
+  }),
+  (req, res) => {
+    res.redirect("/");
+  }
+);
+
 app.get("/new", (req, res) => {
   res.render("new-campaign");
 });
