@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
         <div class="container">
-          <a class="navbar-brand ms-5 me-5" href="#">
+          <a class="navbar-brand ms-5 me-5" href="/">
             <img src="/images/logo.png" alt="logo" width="60" />
           </a>
         </div>
@@ -52,20 +52,24 @@
           </tr>
         </thead>
         <tbody>
+          <% data.forEach((item, index) => { %>
+
           <tr>
-            <td>1</td>
-            <td>IPB peduli banjir New York</td>
-            <td>15 April 2010</td>
-            <td>Selesai</td>
-            <td><button class="btn btn-primary" type="submit">edit</button></td>
+            <td><%= index + 1 %></td>
+            <td><%= item.question1 %></td>
+            <td><%= item.question8 %></td>
+            <td>Ongoing</td>
+            <td>
+              <a
+                href="/edit/<%= item._id%>"
+                target="_blank"
+                class="btn btn-primary"
+                >Edit</a
+              >
+            </td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Nama campaign</td>
-            <td>Tanggal</td>
-            <td>Status</td>
-            <td>Keterangan</td>
-          </tr>
+
+          <% }) %>
         </tbody>
       </table>
     </div>
