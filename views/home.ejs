@@ -16,20 +16,31 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
-        <div class="container">
-          <a class="navbar-brand ms-5 me-5" href="/">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <a class="navbar-brand ms-5" href="/">
             <img src="/images/logo.png" alt="logo" width="60" />
           </a>
-        </div>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active ms-3 me-3" href="#">Riwayat</a>
-            <a class="nav-link active ms-3 me-3" href="#">Tentang</a>
+            <a class="nav-link active" href="#">Riwayat</a>
+            <a class="nav-link active" href="#">Tentang</a>
+            <a
+              class="nav-link active btn btn-warning border-0"
+              href="/list"
+              target="_blank"
+              >Galang dana</a
+            >
           </div>
-          <a href="/contoh" target="_blank" class="btn btn-warning ms-5 me-5"
-            >Galang dana</a
-          >
+        </div>
+        <div class="d-flex me-5">
+          <% if(!currentUser) { %>
+          <a href="/login" class="btn btn-success">Login</a>
+          <a href="/register" class="btn btn-secondary">Register</a>
+          <% } else { %>
+          <form action="/logout" method="POST">
+            <button class="btn btn-danger">Logout</button>
+          </form>
+          <% } %>
         </div>
       </div>
     </nav>
