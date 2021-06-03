@@ -70,6 +70,7 @@
                 >
                   Donate
                 </button>
+                <% if(currentUser) { %>
                 <a
                   href="/edit/<%= e._id %>"
                   target="_blank"
@@ -83,6 +84,7 @@
                 >
                   <button class="btn btn-danger">Delete</button>
                 </form>
+                <% } %>
               </div>
             </div>
           </div>

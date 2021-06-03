@@ -8,8 +8,25 @@ const methodOverride = require("method-override");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/User");
+const session = require("express-session");
+const { isLoggedIn } = require("./middleware");
+
+const sessionConfig = {
+  secret: "thisshouldberealsecret",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    httpOnly: true,
+    expires: Date.now() * 1000 * 60 * 60 * 24 * 7,
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+  },
+};
 
 app.use(methodOverride("_method"));
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
 
 const Dana = require("./models/Dana");
 
@@ -44,6 +61,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+app.use(session(sessionConfig));
 
 app.get("/", async (req, res) => {
   try {
@@ -121,11 +139,18 @@ app.get("/campaign", async (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register");
 });
-app.post("/register", async (req, res) => {
-  const { username, email, password } = req.body;
-  const user = new User({ username, email });
-  const newUser = await User.register(user, password);
-  res.send(newUser);
+app.post("/register", async (req, res, next) => {
+  try {
+    const { username, email, password } = req.body;
+    const user = new User({ username, email });
+    const newUser = await User.register(user, password);
+    req.login(newUser, (err) => {
+      if (err) return next(err);
+      res.redirect("/list");
+    });
+  } catch (error) {
+    res.status(404).send("an error occured!", error);
+  }
 });
 
 // LOGIN
@@ -141,6 +166,12 @@ app.post(
     res.redirect("/");
   }
 );
+
+// LOGOUT
+app.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/");
+});
 
 app.get("/new", (req, res) => {
   res.render("new-campaign");
