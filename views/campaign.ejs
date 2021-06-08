@@ -11,23 +11,64 @@
     />
 
     <title>Galang dana</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto";
+      }
+      html {
+        overflow-x: hidden;
+      }
+      nav {
+        background-color: #3f37c9;
+      }
+      .jumbotron2 {
+        background-color: #ffafcc;
+      }
+      .footer {
+        padding: 2rem;
+        background-color: #3f37c9;
+      }
+      .tombol {
+        background-color: #f72585;
+      }
+      thead {
+        background-color: #3f37c9;
+        color: white;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-xs">
       <div class="container-fluid">
-        <div class="container">
-          <a class="navbar-brand ms-5 me-5" href="/">
-            <img src="/images/logo.png" alt="logo" width="60" />
-          </a>
-        </div>
+        <h3 class="d-flex justify-content-center" style="color: white">
+          IPB Peduli
+        </h3>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active ms-3 me-3" href="#">Riwayat</a>
-            <a class="nav-link active ms-3 me-3" href="#">Tentang</a>
+        <div class="row justify-content-end ms-5 me-5">
+          <div class="col-3">
+            <a class="btn" style="color: white" href="#">Riwayat</a>
           </div>
-          <a href="/new" class="btn btn-warning ms-5 me-5">Galang dana</a>
+          <div class="col-3">
+            <a class="btn" style="color: white" href="#">Tentang</a>
+          </div>
+          <div class="col-6">
+            <a
+              class="btn border-0"
+              href="/list"
+              target="_blank"
+              style="background-color: #f72585; color: white"
+              >Galang dana</a
+            >
+          </div>
         </div>
       </div>
     </nav>
@@ -36,19 +77,23 @@
     <div class="jumbotron mt-3 ms-5 me-5">
       <h1>Daftar Campaign</h1>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a class="btn btn-primary me-md-2" href="/form" target="_blank">
+        <a
+          class="btn warna tombol btn-primary me-md-2"
+          href="/form"
+          target="_blank"
+        >
           + Campaign Baru
         </a>
       </div>
 
       <table class="table mt-5">
-        <thead class="table-dark">
+        <thead>
           <tr>
             <td>No</td>
             <td>Nama campaign</td>
             <td>Tanggal</td>
             <td>Status</td>
-            <td>Keterangan</td>
+            <td>Aksi</td>
           </tr>
         </thead>
         <tbody>
@@ -63,7 +108,7 @@
               <a
                 href="/edit/<%= item._id%>"
                 target="_blank"
-                class="btn btn-primary"
+                class="btn btn-primary tombol"
                 >Edit</a
               >
             </td>

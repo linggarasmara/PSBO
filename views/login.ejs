@@ -14,28 +14,33 @@
     />
     <link rel="stylesheet" href="style.css" />
     <title>LOGIN</title>
+    <style>
+      body {
+        background: url("images/5.jpg");
+      }
+      /* .container .card-body {
+        background-color: black;
+        opacity: 20%;
+      } */
+    </style>
   </head>
   <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-    ></script>
-
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-4 mt-3">
-          <div class="card">
+          <div>
             <img
-              src="/images/logo.png"
+              src="/images/logs.png"
               style="width: 250px"
-              class="card-img-top bg-light ounded mx-auto d-block"
+              class="card-img-top ounded mx-auto d-block"
               alt="logo ipb peduli"
             />
             <div class="card-body">
               <form action="/login" method="POST" autocomplete="off">
                 <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
+                  <label for="username" class="form-label"
+                    ><strong>Username</strong></label
+                  >
                   <input
                     type="text"
                     name="username"
@@ -46,7 +51,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label"
-                    >Password</label
+                    ><strong>Password</strong></label
                   >
                   <input
                     type="password"
@@ -66,4 +71,9 @@
       </div>
     </div>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"
+  ></script>
 </html>
