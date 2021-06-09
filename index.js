@@ -182,6 +182,10 @@ app.get("/show/:id", async (req, res) => {
   res.render("show", { e });
 });
 
+app.get("/donate", (req, res) => {
+  res.render("donate");
+});
+
 app.get("/edit/:id", async (req, res) => {
   const e = await Dana.findById(req.params.id);
   res.render("edit", { e });
