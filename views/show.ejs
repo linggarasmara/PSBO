@@ -45,7 +45,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-xs">
       <div class="container-fluid">
-        <h3 style="color: white">IPB Peduli</h3>
+        <a href="/" style="text-decoration: none;"><h3 style="color: white">IPB Peduli</h3></a>
 
         <div class="d-flex">
           <div>
@@ -71,7 +71,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-8 mt-5">
-          <div class="card">
+          <div class="card border-0">
             <h1 class="card-text text-center" style="text-transform: capitalize; margin-bottom: 2rem;"><strong><%= e.question5 %></strong></h1>
             <img
               src="data:image/<%=e.gambar.contentType%>;base64,<%=e.gambar.data.toString('base64')%>"
@@ -82,31 +82,25 @@
               <div
                 class="progress-bar"
                 role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
+                style="width: 99%"
+                aria-valuenow="99"
                 aria-valuemin="0"
                 aria-valuemax="100"
               ></div>
             </div>
-            <h3 class="text-end">Rp. <%= e.question6 %>,00</h3>
+            <h3 class="text-end me-3">Rp. <%= e.question6 %>,00</h3>
             <div class="card-body">
-              <!-- <p class="card-text"><%= e.question1 %></p>
-              <p class="card-text"><%= e.question2 %></p>
-              <p class="card-text"><%= e.question3 %></p>
-              <p class="card-text"><%= e.question4 %></p>
-              <p class="card-text"><%= e.question6 %></p>
-              <p class="card-text"><%= e.question7 %></p>
-              <p class="card-text"><%= e.question8 %></p> -->
+                <a
+                href="/donate"
+                target="_blank"
+                type="button"
+                class="btn btn-lg shadow btn-primary border-0 mb-5 tombol"
+                style="width: 100%;"
+                >
+                Donate
+            </a>
               <p class="card-text"><%= e.question9 %></p>
               <div>
-                <button
-                  type="button"
-                  class="btn-lg btn-primary tombol"
-                  data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
-                >
-                  Donate
-                </button>
                 <% if(currentUser) { %>
                 <a
                   href="/edit/<%= e._id %>"
@@ -124,51 +118,6 @@
                 <% } %>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="staticBackdrop"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Jumlah Donasi</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <input type="text" class="form-control" placeholder="Rp. 100.000" />
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Donate
-            </button>
           </div>
         </div>
       </div>
