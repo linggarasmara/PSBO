@@ -1,20 +1,39 @@
 # IPB PEDULI
 Tugas Akhir PSBO - P1 - Sebuah Platform untuk Berbagi
 
+---
 ## Deskripsi Aplikasi
+IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online terstruktur dalam lingkup IPB. IPB Peduli membantu mahasiswa, dosen, dan civitas IPB lainnya dalam blablablabalbalbal
 
+---
+
+---
 ## User Analysis
 ### User Story
+- Sebagai seorang civitas IPB, saya ingin berdonasi dalam kegiatan kemanusiaan di IPB
 
+---
+
+
+---
 ## Spesifikasi Teknis Lingkungan Pengembangan
 ### Software
 ### Hardware
 ### Tech Stack
 
+---
+
+---
 ## Konsep OOP
+Konsep OOP yang digunakan dalam perangkat lunak yang dikembangkan adalah sebagai berikut :
 
+---
+---
 ## Tipe Desain Pengembangan
+Tipe Desain pengembangan yang kami gunakan adalah blablabla
 
+---
+---
 ## Hasil dan Pembahasan
 ### Use case diagram
 ### Activity diagram
@@ -24,9 +43,17 @@ Tugas Akhir PSBO - P1 - Sebuah Platform untuk Berbagi
 ### Fungsi utama yang dikembangkan
 ### Fungsi CRUD
 
-## Hasil Implementasi
+---
+---
+## Hasil Implementasi Perangkat Lunak
+Pada bagian ini diisi screenshot hasil dan penjelasan singkat
 
-## Saran
+---
+---
+## Saran Pengembangan
+Pada pengembangannya diharapkan blablabla
+
+---
 
 ## Developer dan Jobdesc
 
