@@ -23,10 +23,6 @@ const sessionConfig = {
 };
 
 app.use(methodOverride("_method"));
-app.use((req, res, next) => {
-  res.locals.currentUser = req.user;
-  next();
-});
 
 const Dana = require("./models/Dana");
 
@@ -52,6 +48,7 @@ db.once("open", () => {
   console.log("Database connected");
 });
 
+app.use(session(sessionConfig));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
@@ -61,9 +58,11 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-app.use(session(sessionConfig));
-
-app.get("/", async (req, res) => {
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+app.get("/", isLoggedIn, async (req, res) => {
   try {
     const data = await Dana.find({});
     res.render("home", { data });
@@ -71,7 +70,7 @@ app.get("/", async (req, res) => {
     res.status(300).send("an error occured!", error);
   }
 });
-app.get("/form", (req, res) => {
+app.get("/form", isLoggedIn, (req, res) => {
   Dana.find({}, (err, item) => {
     if (err) {
       res.status(500).send("an error occured!", err);
@@ -110,15 +109,16 @@ app.post("/form", upload.single("gambar"), (req, res, next) => {
       contentType: "image/png",
     },
   };
+  obj.creator = req.user._id;
   Dana.create(obj, (err, item) => {
     if (err) {
       console.log(err);
     } else {
-      res.redirect("/form");
+      res.redirect("/");
     }
   });
 });
-app.get("/list", async (req, res) => {
+app.get("/list", isLoggedIn, async (req, res) => {
   try {
     const data = await Dana.find({});
     res.render("campaign", { data });
@@ -140,9 +140,9 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 app.post("/register", async (req, res, next) => {
+  const { username, email, password } = req.body;
+  const user = new User({ username, email });
   try {
-    const { username, email, password } = req.body;
-    const user = new User({ username, email });
     const newUser = await User.register(user, password);
     req.login(newUser, (err) => {
       if (err) return next(err);
@@ -159,9 +159,7 @@ app.get("/login", (req, res) => {
 });
 app.post(
   "/login",
-  passport.authenticate("local", {
-    failureRedirect: "/login",
-  }),
+  passport.authenticate("local", { failureRedirect: "/login" }),
   (req, res) => {
     res.redirect("/");
   }
@@ -178,12 +176,22 @@ app.get("/new", (req, res) => {
 });
 
 app.get("/show/:id", async (req, res) => {
-  const e = await Dana.findById(req.params.id);
+  const e = await Dana.findById(req.params.id).populate("creator");
   res.render("show", { e });
 });
 
-app.get("/donate", (req, res) => {
-  res.render("donate");
+//DONASI
+app.get("/donate/:id", (req, res) => {
+  const id = req.params.id;
+  res.render("donate", { id });
+});
+app.patch("/donasi/:id", async (req, res) => {
+  const id = req.params.id;
+  const item = await Dana.findById(id);
+  const nilai = (item.donasi += Number(req.body.donasi));
+  const donate = await Dana.findByIdAndUpdate(id, { ...item, donasi: nilai });
+  await donate.save();
+  res.redirect(`/show/${id}`);
 });
 
 app.get("/edit/:id", async (req, res) => {
@@ -206,6 +214,23 @@ app.delete("/delete/:id", async (req, res) => {
   } catch (error) {
     res.status(404).send("an error occured!", error);
   }
+});
+
+app.get("/admin/:id", async (req, res) => {
+  const id = req.params.id;
+  const item = await Dana.findById(id).populate("creator");
+  res.render("verify", { item });
+});
+app.patch("/admin/:id", async (req, res) => {
+  const id = req.params.id;
+  const item = await Dana.findById(id);
+  const newItem = await Dana.findByIdAndUpdate(id, {
+    ...item,
+    verified: mongoose.Schema.Types.Boolean.convertToTrue,
+  });
+  console.log(newItem);
+  await newItem.save();
+  res.redirect("/");
 });
 app.listen(3000, () => {
   console.log("listening on port 3000");

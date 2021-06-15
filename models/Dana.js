@@ -15,6 +15,18 @@ const danaSchema = new Schema({
     data: Buffer,
     contentType: String,
   },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  donasi: {
+    type: Number,
+    default: 0,
+  },
+  verified: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("Dana", danaSchema);

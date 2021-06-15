@@ -47,9 +47,8 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-xs">
       <div class="container-fluid">
-        <a href="/" style="text-decoration: none"
-          ><h3 style="color: white">IPB Peduli</h3></a
-        >
+        <img src="/images/logo.png" alt="logo" height="60px" width="60px" />
+
 
         <div class="d-flex">
           <div>
@@ -77,67 +76,68 @@
         <div class="col-8 mt-5">
           <div class="card border-2 shadow">
             <h3 class="text-center mb-3 mt-3">Silahkan pilih nominal donasi </h3>
-
             <div
             class="btn-group mb-5 ms-2 me-2"
             role="group"
             aria-label="Basic radio toggle button group"
-          >
-            <input
-              type="radio"
-              class="btn-check"
-              name="btnradio"
-              id="btnradio1"
-              autocomplete="off"
-            />
-            <label class="btn btn-outline-primary" for="btnradio1">10.000</label>
-  
-            <input
-              type="radio"
-              class="btn-check"
-              name="btnradio"
-              id="btnradio2"
-              autocomplete="off"
-            />
-            <label class="btn btn-outline-primary" for="btnradio2">20.000</label>
-  
-            <input
-              type="radio"
-              class="btn-check"
-              name="btnradio"
-              id="btnradio3"
-              autocomplete="off"
-            />
-            <label class="btn btn-outline-primary" for="btnradio3">50.000</label>
-  
-            <input
-              type="radio"
-              class="btn-check"
-              name="btnradio"
-              id="btnradio4"
-              autocomplete="off"
-            />
-            <label class="btn btn-outline-primary" for="btnradio4">100.000</label>
-          </div>
-          
-          <div class="me-2 ms-2">
-            <h4>Pembayaran :</h4>
-            <div class="radio mb-5">
-                <div class="d-inline-block me-5" >
-                  <input type="radio" id="Gopay" name="redio" value="Gopay">
-                  <label for="Gopay">Gopay</label>
-                </div>
-                <div class="d-inline-block" >
-                  <input type="radio" id="Ovo" name="redio" value="Ovo">
-                  <label for="Ovo">Ovo</label>
-                </div>
+            >
+            <form action="/donasi/<%= id %>?_method=PATCH" method="POST">
+              <input
+                type="radio"
+                class="btn-check"
+                name="donasi"
+                value="10000"
+                id="btnradio1"
+              />
+              <label class="btn btn-outline-primary" for="btnradio1">10.000</label>
+    
+              <input
+                type="radio"
+                class="btn-check"
+                name="donasi"
+                value="20000"
+                id="btnradio2"
+              />
+              <label class="btn btn-outline-primary" for="btnradio2">20.000</label>
+    
+              <input
+                type="radio"
+                class="btn-check"
+                name="donasi"
+                value="50000"
+                id="btnradio3"
+              />
+              <label class="btn btn-outline-primary" for="btnradio3">50.000</label>
+    
+              <input
+                type="radio"
+                class="btn-check"
+                name="donasi"
+                value="100000"
+                id="btnradio4"
+              />
+              <label class="btn btn-outline-primary" for="btnradio4">100.000</label>
             </div>
-          </div>
+            
+            <!-- <div class="me-2 ms-2">
+              <h4>Pembayaran :</h4>
+              <div class="radio mb-5">
+                  <div class="d-inline-block me-5" >
+                    <input type="radio" id="Gopay" name="via" value="gopay">
+                    <label for="Gopay">Gopay</label>
+                  </div>
+                  <div class="d-inline-block" >
+                    <input type="radio" id="Ovo" name="via" value="ovo">
+                    <label for="Ovo">Ovo</label>
+                  </div>
+              </div>
+            </div> -->
 
 
-          <a href="/" type="button" class="btn btn-lg btn-primary d-block ms-auto tombol border-0 ms-5 me-2 mb-3">
-            Selesai
-          </a>
+            <button class="btn btn-lg btn-primary d-block ms-auto tombol border-0 ms-5 me-2 mb-3">
+              Selesai
+            </button>
+          </form>
         </div>
       
 
