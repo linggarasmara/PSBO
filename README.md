@@ -26,7 +26,10 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 ---
 ## Spesifikasi Teknis Lingkungan Pengembangan
 ### Software
+- Visual Studio Code
 ### Hardware
+- intel Core i5
+- 8GB RAM
 ### Tech Stack
 
 ---
