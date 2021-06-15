@@ -48,6 +48,7 @@ Tipe Desain pengembangan yang kami gunakan adalah blablabla
 ### Class diagram
 ### Entity Relationship Diagram
 ### Arsitektur sistem
+![diagram-5](https://github.com/linggarasmara/PSBO/blob/8743c200794a51a83cc80af64cd705865ae9f264/diagram/Desain%20Arsitektur.jpg)
 ### Fungsi utama yang dikembangkan
 ### Fungsi CRUD
 
