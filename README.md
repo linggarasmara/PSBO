@@ -75,9 +75,9 @@ Pada pengembangannya diharapkan blablabla
 
 | Nama Anggota | NIM | Role
 | ----- | ----- | ---- 
-| Shibgotalloh Sabilana | G64180002  | Project Manager
-| Abdullah Aziz Wali | G64180016  | Backend Engineer
-| Linggar Asmara  | G64180099  | UI Designer
+| Shibgotalloh Sabilana | G64180002  | Frontend Developer
+| Abdullah Aziz Wali | G64180016  | Backend Developer
+| Linggar Asmara  | G64180099  | Project Manager, UI Designer
 | Firda Agustin Kartika Pratiwi | G64180116  | Dokumentasi??wkwkwkkw, UX Research
 | Hudzaifah Muttaqin | G64180119  | UI Designer, UX Research
 
