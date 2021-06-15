@@ -18,7 +18,8 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 ---
 ## User Analysis
 ### User Story
-- Sebagai seorang civitas IPB, saya ingin berdonasi dalam kegiatan kemanusiaan di IPB
+- Sebagai seorang civitas IPB, saya ingin berdonasi dalam kegiatan kemanusiaan di IPB 
+- Sebagai seorang civitas IPB, saya ingin membuat sebuah campaign agar dapat membantu orang lain yang membutuhkan
 
 ---
 
