@@ -1,9 +1,17 @@
-# IPB PEDULI
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/60084468/121986515-d40d7a00-cdc0-11eb-8682-37510fb3b59e.png" alt="Logo 2 (1)"/>
+</p>
+
+[Deskripsi](#-Deskripsi-Aplikasi) | [User Analysis](#-User-Analysis) | [Spesifikasi](#-Spesifikasi) | [Konsep OOP](#-konsep-OOP) | [Desain Pengembangan](#-tipe-desain-pengembangan) | [Pembahasan](#-hasil-dan-pembahasan) | [Implementasi](#-implementasi) | [Saran](#-saran) | [Developer](#-developer) |
+:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+---
+
+# IPB PEDULI 
 Tugas Akhir PSBO - P1 - Sebuah Platform untuk Berbagi
 
 ---
 ## Deskripsi Aplikasi
-IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online terstruktur dalam lingkup IPB. IPB Peduli membantu mahasiswa, dosen, dan civitas IPB lainnya dalam blablablabalbalbal
+IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online terstruktur dalam lingkup IPB. IPB Peduli membantu mahasiswa, dosen, dan civitas IPB lainnya dalam penyelenggaraan donasi. IPB Peduli yang merupakan platform berbasis web memungkinkan untuk seluruh civitas IPB untuk membuat suatu *campaign* atau turut serta berdonasi pada suatu *campaign* yang tentu dilaksanakan dalam lingkup IPB saja.
 
 ---
 
