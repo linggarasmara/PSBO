@@ -45,7 +45,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-xs">
       <div class="container-fluid">
-        <a href="/" style="text-decoration: none;"><h3 style="color: white">IPB Peduli</h3></a>
+        <img src="images/logo.png" alt="logo" height="60px" width="60px" />
 
         <div class="d-flex">
           <div>
@@ -73,6 +73,7 @@
         <div class="col-8 mt-5">
           <div class="card border-0">
             <h1 class="card-text text-center" style="text-transform: capitalize; margin-bottom: 2rem;"><strong><%= e.question5 %></strong></h1>
+            <h5 class="text-center">created by  <strong><%= e.creator.username %></strong></h5>
             <img
               src="data:image/<%=e.gambar.contentType%>;base64,<%=e.gambar.data.toString('base64')%>"
               class="card-img-top"
@@ -82,17 +83,16 @@
               <div
                 class="progress-bar"
                 role="progressbar"
-                style="width: 99%"
-                aria-valuenow="99"
+                style="width: <%= e.donasi/e.question6*100 %> "
+                aria-valuenow="<%= e.donasi %> "
                 aria-valuemin="0"
-                aria-valuemax="100"
+                aria-valuemax="<%= e.question6 %> "
               ></div>
             </div>
-            <h3 class="text-end me-3">Rp. <%= e.question6 %>,00</h3>
+            <h3 style="display: flex; justify-content: space-between;"><span class="d-inline-block text-primary">Rp. <%= e.donasi %>,00</span><span class="d-inline-block text-success">Rp. <%= e.question6 %>,00</span></h3>
             <div class="card-body">
                 <a
-                href="/donate"
-                target="_blank"
+                href="/donate/<%= e._id %>"
                 type="button"
                 class="btn btn-lg shadow btn-primary border-0 mb-5 tombol"
                 style="width: 100%;"
@@ -101,7 +101,7 @@
             </a>
               <p class="card-text"><%= e.question9 %></p>
               <div>
-                <% if(currentUser) { %>
+                <% if(currentUser && (String(currentUser._id) === String(e.creator._id))) { %>
                 <a
                   href="/edit/<%= e._id %>"
                   target="_blank"
@@ -132,7 +132,7 @@
     var myModal = document.getElementById("myModal");
     var myInput = document.getElementById("myInput");
 
-    myModal.addEventListener("shown.bs.modal", function () {
+    myModal.addEventListener("shown.bs.modal", function() {
       myInput.focus();
     });
   </script>
