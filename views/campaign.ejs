@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+
+    <title>Galang dana</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto";
+      }
+      html {
+        overflow-x: hidden;
+      }
+      nav {
+        background-color: #3f37c9;
+      }
+      .jumbotron2 {
+        background-color: #ffafcc;
+      }
+      .footer {
+        padding: 2rem;
+        background-color: #3f37c9;
+      }
+      .tombol {
+        background-color: #f72585;
+      }
+      thead {
+        background-color: #3f37c9;
+        color: white;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-xs">
+      <div class="container-fluid">
+        <img src="images/logo.png" alt="logo" height="60px" width="60px" />
+
+        <div class="d-flex">
+          <div>
+            <a class="btn" style="color: white" href="#">Riwayat</a>
+          </div>
+          <div>
+            <a class="btn" style="color: white" href="#">Tentang</a>
+          </div>
+          <div>
+            <a
+              class="btn border-0"
+              href="/list"
+              style="background-color: #f72585; color: white"
+              >Galang dana</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- jumbotron -->
+    <div class="jumbotron mt-3 ms-5 me-5">
+      <h1>Daftar Campaign</h1>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn warna tombol btn-primary me-md-2" href="/form">
+          + Campaign Baru
+        </a>
+      </div>
+
+      <table class="table mt-5">
+        <thead>
+          <tr>
+            <td>No</td>
+            <td>Nama campaign</td>
+            <td>Tanggal</td>
+            <td>Status</td>
+            <td>Aksi</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% data.forEach((item, index) => { %>
+
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= item.question1 %></td>
+            <td><%= item.question8 %></td>
+            <td>Ongoing</td>
+            <td>
+              <a
+                href="/edit/<%= item._id%>"
+                target="_blank"
+                class="btn btn-primary tombol"
+                >Edit</a
+              >
+            </td>
+          </tr>
+
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
