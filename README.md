@@ -90,7 +90,8 @@ Pada bagian ini diisi screenshot hasil dan penjelasan singkat
 ---
 ---
 ## Saran Pengembangan
-Pada pengembangannya diharapkan blablabla
+Saran
+Dalam Pengerjaan Project ini, kami menemui beberapa kendala terutama dalam urasi waktu pengerjaan. baik dalam manajemen waktu team, maupun waktu yang diberikan.Pada pengembangan project selanjutnya diharapkan team dapat lebih memanajemen waktu. Kami menggunakan framework bootstrap dalam frontend website kami, mungkin dalam pengembangan lain dapat menggunakan framework lain agar didapatkan hasil yang lebih baik
 
 ---
 
