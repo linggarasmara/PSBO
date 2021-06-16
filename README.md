@@ -108,9 +108,12 @@ Dalam Pengerjaan Project ini, kami menemui beberapa kendala terutama dalam urasi
 
 
 
-![gambar-1](./images/gambar-1.png)
-![gambar-2](./images/gambar-2.png)
-![gambar-3](./images/gambar-3.png)
-![gambar-4](./images/gambar-4.png)
-![gambar-5](./images/gambar-5.png)
-![gambar-6](./images/gambar-6.png)
+![gamba-1](./images/gamba-1.png)
+![gamba-2](./images/gamba-2.png)
+![gamba-3](./images/gamba-3.png)
+![gamba-4](./images/gamba-4.png)
+![gamba-5](./images/gamba-5.png)
+![gamba-6](./images/gamba-6.png)
+![gamba-7](./images/gamba-7.png)
+![gamba-8](./images/gamba-8.png)
+![gambar-9](./images/gamba-9.png)
