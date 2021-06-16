@@ -46,9 +46,13 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 - _Abstractions_
   <p>Proses alur verifikasi galang dana memakai konsep abstraction. Dimana object user yang menggalang dana tidak tahu alur proses verifikasi tersebut. User hanya akan tahu          galang dananya berhasil diterima atau tidak</p>
 - _Inheritance_
-- _object_
-- _Method_
   <p>User merupakan object turunan (subclass) dari admin (superclass) dimana semua method yang digunakan oleh user dapat digunakan oleh admin sementara tidak semua method admin      dapat digunakan oleh object lainnya</p>
+- _object_
+  <p>Kesatuan dasar dari OOP dan merepresentasikan bentuk nyata dari class</p>
+- _Method_
+   <p>Operasi yang berupa fungsi-fungsi yang dapat dilakukan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. Metode menentukan perilaku      object, yakni apa yang terjadi ketika object tersebut dibuat serta berbagai operasi yang dapat dilakukan object.</p>
+
+  
 
 ---
 ---
