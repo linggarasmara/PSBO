@@ -13,14 +13,22 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <title>LOGIN</title>
     <style>
       body {
-        background: url("images/5.jpg");
+        background: url("/images/login.png");
       }
-      /* .container .card-body {
+      /* .tombol {
+        background-color: #f72585;
+        color: white;
+      } */
+      /* .container {
         background-color: black;
-        opacity: 20%;
       } */
     </style>
   </head>
@@ -31,16 +39,17 @@
           <div>
             <img
               src="/images/logo.png"
-              style="width: 250px"
-              class="card-img-top ounded mx-auto d-block"
+              style="width: 150px"
+              class="card-img-top ounded mx-auto d-block mb-2 mt-3"
               alt="logo ipb peduli"
             />
+            <h1 class="text-center mb-4" style="font-family: 'Poppins'">
+              <b>IPB PEDULI</b>
+            </h1>
             <div class="card-body">
               <form action="/login" method="POST" autocomplete="off">
-                <div class="mb-3">
-                  <label for="username" class="form-label"
-                    ><strong>Username</strong></label
-                  >
+                <div class="mb-3 text-light">
+                  <label for="username" class="form-label">Username</label>
                   <input
                     type="text"
                     name="username"
@@ -49,9 +58,9 @@
                     required
                   />
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 text-light">
                   <label for="exampleInputPassword1" class="form-label"
-                    ><strong>Password</strong></label
+                    >Password</label
                   >
                   <input
                     type="password"
@@ -62,7 +71,9 @@
                   />
                 </div>
                 <div class="text-center">
-                  <button class="btn btn-primary">Login</button>
+                  <button class="border border-0 btn-lg btn-primary tombol">
+                    Login
+                  </button>
                 </div>
               </form>
             </div>

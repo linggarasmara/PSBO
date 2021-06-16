@@ -10,7 +10,7 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <title>Details</title>
+    <title>Donasi</title>
 
     <style>
       * {
@@ -21,20 +21,14 @@
       html {
         overflow-x: hidden;
       }
-      nav {
-        background-color: #3f37c9;
+      h3{
+        font-family: "Poppins";
       }
-      .jumbotron2 {
-        background-color: #ffafcc;
-      }
-      .footer {
-        padding: 2rem;
-        background-color: #3f37c9;
-      }
-      .tombol {
+
+      /* .tombol {
         background-color: #f72585;
         color: white;
-      }
+      } */
     </style>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -42,13 +36,20 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-xs">
+    <nav class="navbar btn-dark navbar-expand-xs">
       <div class="container-fluid">
-        <img src="/images/logo.png" alt="logo" height="60px" width="60px" />
-
+        <!-- <a href="/" style="text-decoration: none"
+          ><h3 style="color: white">IPB Peduli</h3></a
+        > -->
+        <img class="ms-4" src="/images/logo.png" alt="logo" height="40px" />
 
         <div class="d-flex">
           <div>
@@ -58,14 +59,19 @@
             <a class="btn" style="color: white" href="#">Tentang</a>
           </div>
           <div>
-            <a
-              class="btn border-0"
-              href="/list"
-              target="_blank"
-              style="background-color: #f72585; color: white"
-              >Galang dana</a
-            >
+            <a class="btn" style="color: white" href="/list">Galang dana</a>
           </div>
+        </div>
+
+        <div class="d-flex me-5">
+          <% if(!currentUser) { %>
+          <a href="/login" class="btn btn-success">Login</a>
+          <a href="/register" class="btn btn-secondary">Register</a>
+          <% } else { %>
+          <a href="/logout" class="btn border border-0 btn-primary tombol"
+            >Logout</a
+          >
+          <% } %>
         </div>
       </div>
     </nav>
@@ -77,7 +83,8 @@
           <div class="card border-2 shadow">
             <h3 class="text-center mb-3 mt-3">Silahkan pilih nominal donasi </h3>
             <div
-            class="btn-group mb-5 ms-2 me-2"
+            class="btn-group btn-center mb-5 ms-2 me-2"
+            style="justify-content: space-around;"
             role="group"
             aria-label="Basic radio toggle button group"
             >
@@ -119,11 +126,11 @@
               <label class="btn btn-outline-primary" for="btnradio4">100.000</label>
             </div>
             
-            <!-- <div class="me-2 ms-2">
+            <div class="me-2 ms-2" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
               <h4>Pembayaran :</h4>
               <div class="radio mb-5">
                   <div class="d-inline-block me-5" >
-                    <input type="radio" id="Gopay" name="via" value="gopay">
+                    <input type="radio" id="Gopay" name="via" value="gopay" checked>
                     <label for="Gopay">Gopay</label>
                   </div>
                   <div class="d-inline-block" >
@@ -131,7 +138,7 @@
                     <label for="Ovo">Ovo</label>
                   </div>
               </div>
-            </div> -->
+            </div>
 
 
             <button class="btn btn-lg btn-primary d-block ms-auto tombol border-0 ms-5 me-2 mb-3">

@@ -21,20 +21,10 @@
       html {
         overflow-x: hidden;
       }
-      nav {
-        background-color: #3f37c9;
-      }
-      .jumbotron2 {
-        background-color: #ffafcc;
-      }
-      .footer {
-        padding: 2rem;
-        background-color: #3f37c9;
-      }
-      .tombol{
+      /* .tombol{
         background-color: #f72585;
         color: white;
-      }
+      } */
     </style>
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -43,9 +33,12 @@
   </head>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-xs">
+    <nav class="navbar btn-dark navbar-expand-xs">
       <div class="container-fluid">
-        <img src="images/logo.png" alt="logo" height="60px" width="60px" />
+        <!-- <a href="/" style="text-decoration: none"
+          ><h3 style="color: white">IPB Peduli</h3></a
+        > -->
+        <img class="ms-4" src="/images/logo.png" alt="logo" height="40px" />
 
         <div class="d-flex">
           <div>
@@ -55,21 +48,26 @@
             <a class="btn" style="color: white" href="#">Tentang</a>
           </div>
           <div>
-            <a
-              class="btn border-0"
-              href="/list"
-              target="_blank"
-              style="background-color: #f72585; color: white"
-              >Galang dana</a
-            >
+            <a class="btn" style="color: white" href="/list">Galang dana</a>
           </div>
+        </div>
+
+        <div class="d-flex me-5">
+          <% if(!currentUser) { %>
+          <a href="/login" class="btn btn-success">Login</a>
+          <a href="/register" class="btn btn-secondary">Register</a>
+          <% } else { %>
+          <a href="/logout" class="btn border border-0 btn-primary tombol"
+            >Logout</a
+          >
+          <% } %>
         </div>
       </div>
     </nav>
 
 
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center shadow">
         <div class="col-8 mt-5">
           <div class="card border-0">
             <h1 class="card-text text-center" style="text-transform: capitalize; margin-bottom: 2rem;"><strong><%= e.question5 %></strong></h1>
@@ -83,7 +81,7 @@
               <div
                 class="progress-bar"
                 role="progressbar"
-                style="width: <%= e.donasi/e.question6*100 %> "
+                style="width: <%= e.donasi/e.question6*100 %>%"
                 aria-valuenow="<%= e.donasi %> "
                 aria-valuemin="0"
                 aria-valuemax="<%= e.question6 %> "
@@ -91,49 +89,23 @@
             </div>
             <h3 style="display: flex; justify-content: space-between;"><span class="d-inline-block text-primary">Rp. <%= e.donasi %>,00</span><span class="d-inline-block text-success">Rp. <%= e.question6 %>,00</span></h3>
             <div class="card-body">
+                <h4 class="text-center"><span class="text-danger"><%= dl %></span> <small>hari lagi</small></h4>
+                <% if(e.verified) { %> 
                 <a
                 href="/donate/<%= e._id %>"
                 type="button"
-                class="btn btn-lg shadow btn-primary border-0 mb-5 tombol"
+                class="d-block btn btn-lg shadow btn-primary border-0 mb-5 tombol"
                 style="width: 100%;"
                 >
-                Donate
-            </a>
+                Donasi
+                </a>
+                <% } %> 
               <p class="card-text"><%= e.question9 %></p>
-              <div>
-                <% if(currentUser && (String(currentUser._id) === String(e.creator._id))) { %>
-                <a
-                  href="/edit/<%= e._id %>"
-                  target="_blank"
-                  class="btn btn-warning"
-                  >Edit</a
-                >
-                <form
-                  method="POST"
-                  action="/delete/<%= e._id %>?_method=DELETE"
-                  class="d-inline"
-                >
-                  <button class="btn btn-danger">Delete</button>
-                </form>
-                <% } %>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    var myModal = document.getElementById("myModal");
-    var myInput = document.getElementById("myInput");
 
-    myModal.addEventListener("shown.bs.modal", function() {
-      myInput.focus();
-    });
-  </script>
 </html>

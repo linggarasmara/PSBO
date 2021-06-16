@@ -14,6 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <!-- <link rel="stylesheet" href="/styles/style.css" /> -->
     <style>
       * {
@@ -25,15 +30,33 @@
         overflow-x: hidden;
       }
       nav {
-        background-color: #3f37c9;
-      }
-      .jumbotron2 {
-        background-color: #ffafcc;
-      }
-      .footer {
-        padding: 2rem;
-        background-color: #3f37c9;
         color: white;
+      }
+      /* .tombol {
+        background-color: #f72585;
+        color: white;
+      } */
+      .jumbotron {
+        background-color: darkgrey;
+        /* background: url("lala.jpg"); */
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        background-size: cover;
+        height: 500px;
+      }
+      .jumbotron .content h1 {
+        padding-top: 80px;
+      }
+      footer {
+        /* background: url("lala.jpg"); */
+        background-color: darkgray;
+        height: 150px;
+        /* background-repeat: no-repeat; */
+        /* background-position-y: bottom; */
+        /* background-size: cover; */
+      }
+      h1 {
+        font-family: "poppins";
       }
     </style>
     <title>IPB PEDULI</title>
@@ -41,27 +64,22 @@
 
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-xs">
+    <nav class="navbar btn-dark navbar-expand-xs">
       <div class="container-fluid">
         <!-- <a href="/" style="text-decoration: none"
           ><h3 style="color: white">IPB Peduli</h3></a
         > -->
-        <img src="images/logo.png" alt="logo" height="60px" width="60px" />
+        <img class="ms-4" src="images/logo.png" alt="logo" height="40px" />
 
         <div class="d-flex">
           <div>
             <a class="btn" style="color: white" href="#">Riwayat</a>
           </div>
           <div>
-            <a class="btn" style="color: white" href="#">Tentang</a>
+            <a class="btn" style="color: white" href="/about">Tentang</a>
           </div>
           <div>
-            <a
-              class="btn border-0"
-              href="/list"
-              style="background-color: #f72585; color: white"
-              >Galang dana</a
-            >
+            <a class="btn" style="color: white" href="/list">Galang dana</a>
           </div>
         </div>
 
@@ -70,18 +88,39 @@
           <a href="/login" class="btn btn-success">Login</a>
           <a href="/register" class="btn btn-secondary">Register</a>
           <% } else { %>
-          <a href="/logout" class="btn btn-danger">Logout</a>
+          <a href="/logout" class="btn border border-0 btn-primary tombol"
+            >Logout</a
+          >
           <% } %>
         </div>
       </div>
     </nav>
 
     <!-- jumbotron -->
+    <div class="jumbotron">
+      <div class="content ms-5 me-5">
+        <h1 class="display-3">IPB PEDULI</h1>
+        <p class="lead">
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
+        </p>
+        <hr class="my-4 mb-5 mt-5" />
+        <p>
+          Ingin berkontribusi langsung dalam membantu teman-teman anda? Klik
+          tombol dibawah
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="/list" role="button"
+            >GALANG DANA</a
+          >
+        </p>
+      </div>
+    </div>
+
     <div class="container mt-5 mb-5">
       <div class="row justify-content-center">
         <% data.forEach(item => { %>
-
-        <div class="col-3 mt-3 mb-3">
+        <div class="col-3 mt-3 mb-3" style="position: relative">
           <div
             class="card shadow"
             style="
@@ -89,7 +128,7 @@
               min-height: 350px;
               max-height: 350px;
               overflow-y: auto;
-              border: 2px solid #3f37c9;
+              border: 2px solid #0d6efd;
             "
           >
             <img
@@ -113,14 +152,26 @@
                 <%= item.question5 %>
               </h5>
               <% if(item.verified) { %>
-              <p>skyes crawford</p>
+              <p
+                class="text-light bg-primary p-1"
+                style="position: absolute; top: 0; right: 0; border-radius: 5px"
+              >
+                <small>verified</small>
+              </p>
+              <% } else { %>
+              <p
+                class="text-light bg-secondary p-1"
+                style="position: absolute; top: 0; right: 0; border-radius: 5px"
+              >
+                <small>unverified</small>
+              </p>
               <% } %>
               <div>
                 <a
                   href="/show/<%=item._id%>"
                   class="btn mb-2 btn-primary border-0"
                   style="
-                    background-color: #f72585;
+                    /* background-color: #f72585; */
                     color: white;
                     display: block;
                   "
@@ -130,7 +181,7 @@
 
                 <a
                   href="/admin/<%= item._id %>"
-                  class="btn btn-primary border-0"
+                  class="btn btn-secondary border-0"
                   style="display: block"
                   >verifikasi</a
                 >
@@ -143,18 +194,25 @@
       </div>
     </div>
 
-    <!-- about -->
-    <div class="footer text-center justify-content-center">
-      <h1><strong>IPB PEDULI</strong></h1>
-      <p class="mt-3">
-        IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara
-        online terstruktur dalam lingkup IPB. IPB Peduli membantu mahasiswa,
-        dosen, dan civitas IPB lainnya dalam penyelenggaraan donasi. IPB Peduli
-        yang merupakan platform berbasis web memungkinkan untuk seluruh civitas
-        IPB untuk membuat suatu campaign atau turut serta berdonasi pada suatu
-        campaign yang tentu dilaksanakan dalam lingkup IPB saja
-      </p>
-    </div>
+    <footer class="page-footer blue">
+      <div
+        class="footer-copyright text-center py-3"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          margin: 0;
+        "
+      >
+        <p style="font-size: 21px; margin: 0">
+          © 2021 Copyright:
+          <a href="https://github.com/linggarasmara/PSBO" target="_blank">
+            Kelompok 7 PSBO</a
+          >
+        </p>
+      </div>
+    </footer>
   </body>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

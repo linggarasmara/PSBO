@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="/styles/style.css" /> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto";
+      }
+      html {
+        overflow-x: hidden;
+      }
+      nav {
+        color: white;
+      }
+      /* .tombol {
+        background-color: #f72585;
+        color: white;
+      } */
+      .jumbotron {
+        /* background-color: darkgrey; */
+        /* background: url("lala.jpg"); */
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        background-size: cover;
+        height: 500px;
+        text-align: center;
+      }
+      .jumbotron p {
+        width: 50%;
+        margin: auto;
+      }
+      .jumbotron .content h1 {
+        padding-top: 80px;
+      }
+      footer {
+        /* background: url("lala.jpg"); */
+        background-color: darkgray;
+        height: 150px;
+        /* background-repeat: no-repeat; */
+        /* background-position-y: bottom; */
+        /* background-size: cover; */
+      }
+      h1 {
+        font-family: "poppins";
+      }
+    </style>
+    <title>Tentang</title>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar btn-dark navbar-expand-xs">
+      <div class="container-fluid">
+        <!-- <a href="/" style="text-decoration: none"
+          ><h3 style="color: white">IPB Peduli</h3></a
+        > -->
+        <img class="ms-4" src="images/logo.png" alt="logo" height="40px" />
+
+        <div class="d-flex">
+          <div>
+            <a class="btn" style="color: white" href="#">Riwayat</a>
+          </div>
+          <div>
+            <a class="btn" style="color: white" href="#">Tentang</a>
+          </div>
+          <div>
+            <a class="btn" style="color: white" href="/list">Galang dana</a>
+          </div>
+        </div>
+
+        <div class="d-flex me-5">
+          <% if(!currentUser) { %>
+          <a href="/login" class="btn btn-success">Login</a>
+          <a href="/register" class="btn btn-secondary">Register</a>
+          <% } else { %>
+          <a href="/logout" class="btn border border-0 btn-primary tombol"
+            >Logout</a
+          >
+          <% } %>
+        </div>
+      </div>
+    </nav>
+
+    <!-- jumbotron -->
+    <div class="jumbotron">
+      <div class="content ms-5 me-5 text-center">
+        <h1 class="display-3">IPB PEDULI</h1>
+        <hr class="my-4" />
+        <p>
+          IPB Peduli merupakan sebuah platform penggalangan dana dan donasi
+          secara online terstruktur dalam lingkup IPB. IPB Peduli membantu
+          mahasiswa, dosen, dan civitas IPB lainnya dalam penyelenggaraan
+          donasi. IPB Peduli yang merupakan platform berbasis web memungkinkan
+          untuk seluruh civitas IPB untuk membuat suatu campaign atau turut
+          serta berdonasi pada suatu campaign yang tentu dilaksanakan dalam
+          lingkup IPB saja.
+        </p>
+      </div>
+    </div>
+
+    <footer class="page-footer blue">
+      <div
+        class="footer-copyright text-center py-3"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          margin: 0;
+        "
+      >
+        <p style="font-size: 21px; margin: 0">
+          © 2021 Copyright:
+          <a href="https://github.com/linggarasmara/PSBO" target="_blank">
+            Kelompok 7 PSBO</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"
+  ></script>
+</html>

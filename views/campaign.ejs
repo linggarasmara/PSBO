@@ -9,7 +9,11 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <title>Galang dana</title>
     <style>
       * {
@@ -20,22 +24,15 @@
       html {
         overflow-x: hidden;
       }
-      nav {
-        background-color: #3f37c9;
-      }
-      .jumbotron2 {
-        background-color: #ffafcc;
-      }
-      .footer {
-        padding: 2rem;
-        background-color: #3f37c9;
-      }
-      .tombol {
+      /* .tombol {
         background-color: #f72585;
-      }
+      } */
       thead {
-        background-color: #3f37c9;
+        background-color: #000000;
         color: white;
+      }
+      h1 {
+        font-family: "poppins";
       }
     </style>
 
@@ -47,9 +44,12 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-xs">
+    <nav class="navbar btn-dark navbar-expand-xs">
       <div class="container-fluid">
-        <img src="images/logo.png" alt="logo" height="60px" width="60px" />
+        <!-- <a href="/" style="text-decoration: none"
+          ><h3 style="color: white">IPB Peduli</h3></a
+        > -->
+        <img class="ms-4" src="images/logo.png" alt="logo" height="40px" />
 
         <div class="d-flex">
           <div>
@@ -59,43 +59,55 @@
             <a class="btn" style="color: white" href="#">Tentang</a>
           </div>
           <div>
-            <a
-              class="btn border-0"
-              href="/list"
-              style="background-color: #f72585; color: white"
-              >Galang dana</a
-            >
+            <a class="btn" style="color: white" href="/list">Galang dana</a>
           </div>
+        </div>
+
+        <div class="d-flex me-5">
+          <% if(!currentUser) { %>
+          <a href="/login" class="btn btn-success">Login</a>
+          <a href="/register" class="btn btn-secondary">Register</a>
+          <% } else { %>
+          <a href="/logout" class="btn border border-0 btn-primary tombol"
+            >Logout</a
+          >
+          <% } %>
         </div>
       </div>
     </nav>
 
     <!-- jumbotron -->
     <div class="jumbotron mt-3 ms-5 me-5">
-      <h1>Daftar Campaign</h1>
+      <h1>Daftar Penggalangan dana</h1>
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <a class="btn warna tombol btn-primary me-md-2" href="/form">
-          + Campaign Baru
+          + Galang dana Baru
         </a>
       </div>
 
-      <table class="table mt-5">
+      <table class="table table-striped table-hover mt-5">
         <thead>
           <tr>
             <td>No</td>
             <td>Nama campaign</td>
             <td>Tanggal</td>
+            <% if(currentUser.username === 'admin') { %>
+            <td>Pembuat</td>
+            <% } %>
             <td>Status</td>
             <td>Aksi</td>
           </tr>
         </thead>
         <tbody>
-          <% data.forEach((item, index) => { %>
-
+          <% data.forEach((item, index) => { if(item.creator.username ===
+          currentUser.username || currentUser.username === 'admin') { %>
           <tr>
             <td><%= index + 1 %></td>
             <td><%= item.question1 %></td>
             <td><%= item.question8 %></td>
+            <% if(currentUser.username === 'admin') { %>
+            <td><%= item.creator.username %></td>
+            <% } %>
             <td>Ongoing</td>
             <td>
               <a
@@ -104,10 +116,18 @@
                 class="btn btn-primary tombol"
                 >Edit</a
               >
+              <% if(currentUser.username === 'admin') { %>
+              <form
+                action="/delete/<%= item._id %>?_method=DELETE"
+                method="POST"
+                style="display: inline"
+              >
+                <button class="btn btn-danger">Delete</button>
+              </form>
+              <% } %>
             </td>
           </tr>
-
-          <% }) %>
+          <% } }) %>
         </tbody>
       </table>
     </div>

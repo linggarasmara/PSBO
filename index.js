@@ -91,7 +91,6 @@ app.post("/form", upload.single("gambar"), (req, res, next) => {
     question8,
     question9,
   } = req.body;
-  console.log(req.body);
   var obj = {
     question1,
     question2,
@@ -120,7 +119,7 @@ app.post("/form", upload.single("gambar"), (req, res, next) => {
 });
 app.get("/list", isLoggedIn, async (req, res) => {
   try {
-    const data = await Dana.find({});
+    const data = await Dana.find({}).populate("creator");
     res.render("campaign", { data });
   } catch (error) {
     res.status(404).send("an error occured!", error);
@@ -175,9 +174,13 @@ app.get("/new", (req, res) => {
   res.render("new-campaign");
 });
 
-app.get("/show/:id", async (req, res) => {
+app.get("/show/:id", isLoggedIn, async (req, res) => {
   const e = await Dana.findById(req.params.id).populate("creator");
-  res.render("show", { e });
+  const currentDate = Date.now();
+  const due = Date.parse(e.question8);
+  const dueDate = due - currentDate;
+  const dl = new Date(dueDate).getDate();
+  res.render("show", { e, dl });
 });
 
 //DONASI
@@ -187,10 +190,16 @@ app.get("/donate/:id", (req, res) => {
 });
 app.patch("/donasi/:id", async (req, res) => {
   const id = req.params.id;
-  const item = await Dana.findById(id);
-  const nilai = (item.donasi += Number(req.body.donasi));
-  const donate = await Dana.findByIdAndUpdate(id, { ...item, donasi: nilai });
-  await donate.save();
+  const item = await Dana.findById(id).exec();
+  const newItem = item;
+  const nilai = item.donasi + Number(req.body.donasi);
+  const donate = await Dana.findByIdAndUpdate(
+    id,
+    {
+      donasi: nilai,
+    },
+    { new: true }
+  );
   res.redirect(`/show/${id}`);
 });
 
@@ -225,12 +234,12 @@ app.patch("/admin/:id", async (req, res) => {
   const id = req.params.id;
   const item = await Dana.findById(id);
   const newItem = await Dana.findByIdAndUpdate(id, {
-    ...item,
-    verified: mongoose.Schema.Types.Boolean.convertToTrue,
+    verified: true,
   });
-  console.log(newItem);
-  await newItem.save();
-  res.redirect("/");
+  res.redirect(`/show/${id}`);
+});
+app.get("/about", isLoggedIn, (req, res) => {
+  res.render("about");
 });
 app.listen(3000, () => {
   console.log("listening on port 3000");

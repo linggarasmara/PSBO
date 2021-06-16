@@ -25,27 +25,23 @@
       html {
         overflow-x: hidden;
       }
-      nav {
-        background-color: #3f37c9;
-      }
-      .jumbotron2 {
-        background-color: #ffafcc;
-      }
-      .footer {
-        padding: 2rem;
-        background-color: #3f37c9;
-      }
-      .tombol {
+      /* .tombol {
         background-color: #f72585;
         color: white;
+      } */
+      h1 {
+        font-family: "Poppins";
       }
     </style>
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-xs">
+    <nav class="navbar btn-dark navbar-expand-xs">
       <div class="container-fluid">
-        <img src="images/logo.png" alt="logo" height="60px" width="60px" />
+        <!-- <a href="/" style="text-decoration: none"
+          ><h3 style="color: white">IPB Peduli</h3></a
+        > -->
+        <img class="ms-4" src="images/logo.png" alt="logo" height="40px" />
 
         <div class="d-flex">
           <div>
@@ -55,13 +51,7 @@
             <a class="btn" style="color: white" href="#">Tentang</a>
           </div>
           <div>
-            <a
-              class="btn border-0"
-              href="/list"
-              target="_blank"
-              style="background-color: #f72585; color: white"
-              >Galang dana</a
-            >
+            <a class="btn" style="color: white" href="/list">Galang dana</a>
           </div>
         </div>
 
@@ -70,13 +60,14 @@
           <a href="/login" class="btn btn-success">Login</a>
           <a href="/register" class="btn btn-secondary">Register</a>
           <% } else { %>
-          <form action="/logout" method="POST">
-            <button class="btn btn-danger">Logout</button>
-          </form>
+          <a href="/logout" class="btn border border-0 btn-primary tombol"
+            >Logout</a
+          >
           <% } %>
         </div>
       </div>
     </nav>
+
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-6 shadow">
@@ -176,7 +167,7 @@
               <label for="question8" class="form-label"
                 >Batas waktu penggalangan dana?
               </label>
-              <p style="font-size: small">*maksimal 60 hari</p>
+              <p style="font-size: small">*maksimal 30 hari</p>
               <input
                 id="question8"
                 required
@@ -189,6 +180,7 @@
               <label for="question9" class="form-label"
                 >Masukan deskripsi cerita penggalangan danamu
               </label>
+
               <textarea
                 id="question9"
                 cols="60"
