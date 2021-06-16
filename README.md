@@ -45,7 +45,17 @@ Konsep OOP yang digunakan dalam perangkat lunak yang dikembangkan adalah sebagai
 ---
 ---
 ## Tipe Desain Pengembangan
-Tipe Desain pengembangan yang kami gunakan adalah blablabla
+Dalam pengembangan sistem web IPB Peduli, kami menggunakan metode waterfall. Metode ini menurut kami cocok mengingat waktu pengembangan yang sempit. Metode ini merupakan metode yang sistematis dan runtut. Tahapa-tahapan yang dilakukan dalam pengembangan ini adalah sebagai berikut :
+- Analisis Kebutuhan
+  <p>Pada tahap ini, dilakukan analisis kebutuhan pengguna untuk platform yang diharapkan. Analisis Kebutuhan dapat dilakukan dengan wawancara, diskusi, maupun studi literatur.      Hasil informasi yang didapatkan kemudian akan digunakan untuk memenuhi kebutuhan pengguna.</p>
+- Sistem Desain
+  <p>Pada sistem desain, kebutuhan software mulai dipenuhi, seperti perancangan sistem web, pembuatan use case diagram, pembuatan activity diagram, Class diagarm, arsitektur          sistem, dan interface untuk platform web.</p>
+- Impementasi sistem
+  <p>Pada tahap ini dilakukan implementasi dari perancangan yang dilakukan pada tahap sistem desain. Sistem akan dibuat menggunakan lingkungan Node JS, JS, HTML, CSS, MongoDB,        ExpressJs, dan Github (version control). Setelah implementasi, dilakukan testing untuk mengetahui kesalahan atau kekurangan yang terdapat pada platform yang dikembangkan.</p>
+- Integrasi
+  <p>Tahap pengintegrasian tahap-tahap yang telah dilakukan.</p>
+- Perawatan dan Operasional
+
 
 ---
 ---
