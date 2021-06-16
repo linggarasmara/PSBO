@@ -44,7 +44,7 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 - _object_
  <p>kesatuan dasar dari OOP dan merepresentasikan bentuk nyata dari class.</p>
 - _Method_
- <p> suatu operasi berupa fungsi-fungsi yang dapat dilakukan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. Metode menentukan perilaku object, yakni apa yang terjadi ketika object tersebut dibuat serta berbagai operasi yang dapat dilakukan object..</p>
+ <p>suatu operasi berupa fungsi-fungsi yang dapat dilakukan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. Metode menentukan perilaku object, yakni apa yang terjadi ketika object tersebut dibuat serta berbagai operasi yang dapat dilakukan object..</p>
 - _Property_
  <p>bagian dari sebuah class yang mendeskripsikan sifat yang dimiliki oleh class tersebut.</p>
 - _Encapsulation_
