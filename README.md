@@ -74,6 +74,8 @@ Dalam pengembangan sistem web IPB Peduli, kami menggunakan metode waterfall. Met
 ![WhatsApp Image 2021-06-16 at 9 43 36 AM](https://user-images.githubusercontent.com/60084468/122150150-65472400-ce87-11eb-87e0-4e04e03f77ff.jpeg)
 ![WhatsApp Image 2021-06-16 at 9 44 34 AM](https://user-images.githubusercontent.com/60084468/122150206-7abc4e00-ce87-11eb-8bd6-83166b7e845c.jpeg)
 ### Class diagram
+![Class diagram](https://user-images.githubusercontent.com/60084323/122155515-51082480-ce91-11eb-8627-6d0b3bcc8f79.png)
+
 ### Entity Relationship Diagram
 ![Untitled Diagram-erd](https://user-images.githubusercontent.com/60084468/122149825-e6ea8200-ce86-11eb-904f-56a7ffde6c2e.png)
 
