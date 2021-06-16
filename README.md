@@ -111,7 +111,6 @@ Dalam Pengerjaan Project ini, kami menemui beberapa kendala terutama dalam urasi
 
 
 ![gamba-1](./images/gamba-1.png)
-<p2 align="center"> Login Page</p>
 ![gamba-2](./images/gamba-2.png)
 ![gamba-3](./images/gamba-3.png)
 ![gamba-4](./images/gamba-4.png)
