@@ -41,15 +41,19 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 
 ---
 ## Konsep OOP
+- _object_
+ <p>kesatuan dasar dari OOP dan merepresentasikan bentuk nyata dari class.</p>
+- _Method _
+ <p> suatu operasi berupa fungsi-fungsi yang dapat dilakukan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. Metode menentukan perilaku object, yakni apa yang terjadi ketika object tersebut dibuat serta berbagai operasi yang dapat dilakukan object..</p>
+- _Property _
+ <p>bagian dari sebuah class yang mendeskripsikan sifat yang dimiliki oleh class tersebut.</p>
 - _Encapsulation_
   <p>Terdapat beberapa method dari object admin yang bersifat private yaitu dalam memverifikasi setiap donasi yang terdaftar</p>
 - _Abstractions_
   <p>Proses alur verifikasi galang dana memakai konsep abstraction. Dimana object user yang menggalang dana tidak tahu alur proses verifikasi tersebut. User hanya akan tahu          galang dananya berhasil diterima atau tidak</p>
 - _Inheritance_
   <p>User merupakan object turunan (subclass) dari admin (superclass) dimana semua method yang digunakan oleh user dapat digunakan oleh admin sementara tidak semua method admin      dapat digunakan oleh object lainnya</p>
-- _Polymorphism_
-  <p>Polymorphism merupakan konsep oop dimana class memiliki banyak bentuk method yang berbeda, meskipun namanya sama. Penerapan hal ini pada sistem salah satunya pada
-     serializer, dimana terdapat beberapa method yang sama digunakan pada class yang ada</p>
+
 ---
 ---
 ## Tipe Desain Pengembangan
