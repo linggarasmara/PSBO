@@ -61,9 +61,14 @@ Dalam pengembangan sistem web IPB Peduli, kami menggunakan metode waterfall. Met
 ---
 ## Hasil dan Pembahasan
 ### Use case diagram
+![Untitled Diagram-use case (2)](https://user-images.githubusercontent.com/60084468/122149884-fb2e7f00-ce86-11eb-99d8-400d02437dc9.png)
 ### Activity diagram
+![WhatsApp Image 2021-06-16 at 9 43 36 AM](https://user-images.githubusercontent.com/60084468/122150150-65472400-ce87-11eb-87e0-4e04e03f77ff.jpeg)
+![WhatsApp Image 2021-06-16 at 9 44 34 AM](https://user-images.githubusercontent.com/60084468/122150206-7abc4e00-ce87-11eb-8bd6-83166b7e845c.jpeg)
 ### Class diagram
 ### Entity Relationship Diagram
+![Untitled Diagram-erd](https://user-images.githubusercontent.com/60084468/122149825-e6ea8200-ce86-11eb-904f-56a7ffde6c2e.png)
+
 ### Arsitektur sistem
 ![diagram-5](https://github.com/linggarasmara/PSBO/blob/8743c200794a51a83cc80af64cd705865ae9f264/diagram/Desain%20Arsitektur.jpg)
 ### Fungsi utama yang dikembangkan
