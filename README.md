@@ -18,12 +18,11 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 ---
 ## User Analysis
 ### User Story
-- Sebagai seorang civitas IPB, saya ingin berdonasi dalam kegiatan kemanusiaan di IPB 
-- Sebagai seorang civitas IPB, saya ingin membuat sebuah campaign agar dapat membantu orang lain yang membutuhkan
+- "Sebagai seorang civitas IPB, saya ingin berdonasi dalam kegiatan kemanusiaan di IPB"
+- "Sebagai seorang civitas IPB, saya ingin membuat sebuah campaign agar dapat membantu orang lain yang membutuhkan"
+- "Sebagai seorang civitas IPB, saya ingin mengetahui informasi kegiatan penggalangan dana yang ada di IPB."
 
 ---
-
-
 ---
 ## Spesifikasi Teknis Lingkungan Pengembangan
 ### Software
@@ -100,8 +99,8 @@ Pada pengembangannya diharapkan blablabla
 | Shibgotalloh Sabilana | G64180002  | Frontend Developer
 | Abdullah Aziz Wali | G64180016  | Backend Developer
 | Linggar Asmara  | G64180099  | Project Manager, UI Designer
-| Firda Agustin Kartika Pratiwi | G64180116  | Dokumentasi??wkwkwkkw, UX Research
-| Hudzaifah Muttaqin | G64180119  | UI Designer, UX Research
+| Firda Agustin Kartika Pratiwi | G64180116  | System Analyst
+| Hudzaifah Muttaqin | G64180119  | UI Designer
 
 
 
