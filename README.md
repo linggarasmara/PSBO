@@ -86,12 +86,38 @@ Dalam pengembangan sistem web IPB Peduli, kami menggunakan metode waterfall. Met
 ### Arsitektur sistem
 ![diagram-5](https://github.com/linggarasmara/PSBO/blob/8743c200794a51a83cc80af64cd705865ae9f264/diagram/Desain%20Arsitektur.jpg)
 ### Fungsi utama yang dikembangkan
+- **GALANG DANA**
+  <p>Fitur ini dapat digunakan oleh pengguna untuk mendaftarkan galang dana. Pengguna wajib mengisi form yang telah disediakan, dan melengkapi dokumen penunjang. Galang dana yang diajukan dapat terlihat di platform IPB Peduli setelah verifikasi oleh admin.</p>
+  
+- **DONASI**
+  <p>Pada fitur Donasi, pengguna dapat melihat galang dana apa saja yang sedang dibuka. Pengguna dapat melakukan donasi untuk galang dana yang sedang dibuka dengan nominal yang diinginkan melalui e-wallet yang tersedia.</p>
+
 ### Fungsi CRUD
+- **Create**
+<p>Pengguna dapat membuat galang dana dengan atribut id galang dana, id user, target, deskripsi, gambar.</p>
+
+- **Read**
+<p>Pengguna dapat melihat galang dana yang sedang on going.</p>
+
+- **Update**
+<p>Pengguna dapat mengupdate dokumen pendaftaran galang dana yang belum disubmit</p>
+
+- **Delete**
+<p>Admin dapat menghapus pendafftaran galang dana yang tidak memenuhi syarat</p>
 
 ---
 ---
 ## Hasil Implementasi Perangkat Lunak
-Pada bagian ini diisi screenshot hasil dan penjelasan singkat
+
+![gamba-1](./images/gamba-1.png)
+![gamba-2](./images/gamba-2.png)
+![gamba-3](./images/gamba-3.png)
+![gamba-4](./images/gamba-4.png)
+![gamba-5](./images/gamba-5.png)
+![gamba-6](./images/gamba-6.png)
+![gamba-7](./images/gamba-7.png)
+![gamba-8](./images/gamba-8.png)
+![gambar-9](./images/gamba-9.png)
 
 ---
 ---
@@ -112,14 +138,3 @@ Dalam Pengerjaan Project ini, kami menemui beberapa kendala terutama dalam urasi
 | Hudzaifah Muttaqin | G64180119  | UI Designer
 
 
-
-
-![gamba-1](./images/gamba-1.png)
-![gamba-2](./images/gamba-2.png)
-![gamba-3](./images/gamba-3.png)
-![gamba-4](./images/gamba-4.png)
-![gamba-5](./images/gamba-5.png)
-![gamba-6](./images/gamba-6.png)
-![gamba-7](./images/gamba-7.png)
-![gamba-8](./images/gamba-8.png)
-![gambar-9](./images/gamba-9.png)
