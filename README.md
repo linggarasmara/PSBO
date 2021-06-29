@@ -138,3 +138,9 @@ Dalam Pengerjaan Project ini, kami menemui beberapa kendala terutama dalam urasi
 | Hudzaifah Muttaqin | G64180119  | UI Designer
 
 
+## Deploy
+
+Aplikasi IPB Peduli telah dilakukan proses deploy. silahkan cek di :
+https://ipb-peduli.herokuapp.com/
+(silahkan login dengan username : mhs. password : 123)
+
