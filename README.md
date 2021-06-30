@@ -155,6 +155,6 @@ Dalam Pengerjaan Project ini, kami menemui beberapa kendala terutama dalam urasi
 ## Deploy
 
 <p>Aplikasi IPB Peduli telah dilakukan proses deploy. silahkan cek di : https://ipb-peduli.herokuapp.com/</p>
-<p>Untuk demo, silahkan login dengan username : mhs. password : 123</p>
+<p>Untuk demo, silahkan login dengan **username** : mhs dan **password** : 123</p>
 
 
