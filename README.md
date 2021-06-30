@@ -58,13 +58,13 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 ---
 ## Design Pattern
 MVC (Model-View-Controller)
-- _Model_
+- **Model**
   <p>Memiliki fungsi untuk manajemen data, model juga merupakan komponen yang nantinya akan melakukan manipulasi data yang berhubungan dengan logika serta bisa melakukan perintah.
   </p>
-- _View_
+- **View**
   <p>Digunakan untuk menampilkan data dalam format-format tertentu yang sudah dipilih sebelumnya. View bertugas untuk menampilkan tampilan dari logika. 
   </p>
-- _Controller_
+- **Controller**
   <p>Kegunaan dari controller ini adalah menerima permintaan kemudian memilihkan model dan juga view yang akan ditampilkan pada client. Bisa dikatakan, bagian ini yang menjembatani antara model dan view.
   </p>
 
@@ -154,7 +154,7 @@ Dalam Pengerjaan Project ini, kami menemui beberapa kendala terutama dalam urasi
 
 ## Deploy
 
-Aplikasi IPB Peduli telah dilakukan proses deploy. silahkan cek di :
-https://ipb-peduli.herokuapp.com/
-(silahkan login dengan username : mhs. password : 123)
+<p>Aplikasi IPB Peduli telah dilakukan proses deploy. silahkan cek di : https://ipb-peduli.herokuapp.com/</p>
+<p>Untuk demo, silahkan login dengan username : mhs. password : 123</p>
+
 
