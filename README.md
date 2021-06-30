@@ -6,8 +6,10 @@
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 ---
 
-# IPB PEDULI 
-Tugas Akhir PSBO - P1 - Sebuah Platform untuk Berbagi
+# Nama Aplikasi 
+IPB PEDULI - Sebuah Platform untuk Berbagi
+
+---
 
 ---
 ## Deskripsi Aplikasi
@@ -52,7 +54,19 @@ IPB Peduli merupakan sebuah platform penggalangan dana dan donasi secara online 
 - _Method_
    <p>Operasi yang berupa fungsi-fungsi yang dapat dilakukan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. Metode menentukan perilaku      object, yakni apa saja yang terjadi ketika object tersebut dibuat serta berbagai operasi yang dapat dilakukan object.</p>
 
-  
+---
+---
+## Design Pattern
+MVC (Model-View-Controller)
+- _Model_
+  <p>Memiliki fungsi untuk manajemen data, model juga merupakan komponen yang nantinya akan melakukan manipulasi data yang berhubungan dengan logika serta bisa melakukan perintah.
+  </p>
+- _View_
+  <p>Digunakan untuk menampilkan data dalam format-format tertentu yang sudah dipilih sebelumnya. View bertugas untuk menampilkan tampilan dari logika. 
+  </p>
+- _Controller_
+  <p>Kegunaan dari controller ini adalah menerima permintaan kemudian memilihkan model dan juga view yang akan ditampilkan pada client. Bisa dikatakan, bagian ini yang menjembatani antara model dan view.
+  </p>
 
 ---
 ---
